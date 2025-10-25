@@ -4,7 +4,7 @@ const Employee = require('../models/Employee');
 const router = express.Router();
 
 // GET /employees - list all employees
-router.get('/', async (_req, res) => {
+router.get('/api', async (_req, res) => {
   try {
     const employees = await Employee.findAll({ order: [['employee_id', 'ASC']] });
     res.json(employees);
@@ -15,7 +15,7 @@ router.get('/', async (_req, res) => {
 });
 
 // POST /employees - add a new employee
-router.post('/', async (req, res) => {
+router.post('/api', async (req, res) => {
   try {
     const { first_name, last_name, email, birthdate, salary } = req.body;
     const newEmp = await Employee.create({
