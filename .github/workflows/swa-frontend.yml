@@ -6,6 +6,7 @@ on:
     paths:
       - 'frontend/**'
       - '.github/workflows/swa-frontend.yml'
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -35,4 +36,3 @@ jobs:
           action: "upload"
           app_location: "frontend"
           output_location: "dist"
-``
